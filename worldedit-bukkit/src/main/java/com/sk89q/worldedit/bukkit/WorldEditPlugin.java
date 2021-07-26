@@ -86,10 +86,7 @@ import java.io.InputStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.List;
-import java.util.Locale;
-import java.util.Map;
-import java.util.Optional;
+import java.util.*;
 import java.util.logging.Level;
 
 import static com.google.common.base.Preconditions.checkNotNull;
@@ -387,10 +384,11 @@ public class WorldEditPlugin extends JavaPlugin implements TabCompleter {
 
     @Override
     public List<String> onTabComplete(CommandSender sender, Command cmd, String commandLabel, String[] args) {
-        String arguments = rebuildArguments(commandLabel, args);
-        CommandSuggestionEvent event = new CommandSuggestionEvent(wrapCommandSender(sender), arguments);
-        getWorldEdit().getEventBus().post(event);
-        return CommandUtil.fixSuggestions(arguments, event.getSuggestions());
+        return new ArrayList<>();
+       // String arguments = rebuildArguments(commandLabel, args);
+       // CommandSuggestionEvent event = new CommandSuggestionEvent(wrapCommandSender(sender), arguments);
+       // getWorldEdit().getEventBus().post(event);
+       // return CommandUtil.fixSuggestions(arguments, event.getSuggestions());
     }
 
     /**

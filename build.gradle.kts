@@ -9,9 +9,7 @@ buildscript {
             url = uri("https://maven.fabricmc.net/")
         }
     }
-    dependencies {
-        classpath("net.fabricmc:fabric-loom:${versions.loom}")
-    }
+
 }
 plugins {
     id("org.enginehub.codecov")
